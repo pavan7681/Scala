@@ -1,0 +1,47 @@
+object HelloWrold {
+  def main (args:Array[String]):Unit = {
+    
+    //variables
+    
+    val myage : Int = 20
+    val a  = 22
+    val flag = true
+    val aString  = "I love scala"
+    val aComposeString = "i love scala" + " " + "just started learning it"
+    
+    //string interpolation
+    
+    val anInterpolation = s"my opinion about scala is $aString"
+    print(anInterpolation)
+    
+    //structures that can be reduced a value is called expression
+    
+    val anExpression = 2 + 3
+    val ifExpression = if (myage > 20) 20 else 30
+    println(ifExpression)
+    
+    //nested if
+    
+    val reward = if (myage > 10 & myage < 20) 30
+    else if (myage >= 20 & myage <= 30 ) 40
+    else 20
+    println(reward)
+    
+    //functions
+    
+    def factorial(n : Int): Int = {
+      if (n <= 1) 1
+      else n * factorial(n - 1) 
+    }
+    
+    println(factorial(5))
+    
+    //function with no return type
+    
+    def unitfucntion() : Unit = {
+      println("this function does not return anything")
+    }
+    
+    unitfucntion()
+  }
+}
