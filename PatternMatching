@@ -1,0 +1,40 @@
+object HelloWrold {
+
+  //switch expression 
+  val Option = 55
+  val order = Option match {
+    case 1 => "first"
+    case 2 => "second"
+    case 3 => "third"
+    case _ => Option + "th"
+  }
+  
+  println(order)
+  
+  case class Person(name:String,age :Int) 
+  val bob = Person("pavan",20)
+  
+  val output = bob match {
+    case Person(n,a) => s"hi my name is $n and my age is $a"
+    case _ => "something else"
+  }
+  
+  println(output)
+  
+  val aList = List(1,2,3)
+  val listDescription = aList match {
+    case List(_,2,_) => "this list is having middle element as 2"
+    case _ => "something else"
+  }
+  
+  println(listDescription)
+  
+  
+  
+  
+  def main (args:Array[String]):Unit = {
+    
+    
+    
+  }
+}
