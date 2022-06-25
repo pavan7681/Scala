@@ -1,0 +1,96 @@
+object Collections {
+  class Person(name : String) {
+    def apply(age : Int) = println(s"I have aged $age years")
+  }
+  
+  val bob = new Person("Bob")
+  bob.apply(20)
+  bob(20)//invoke bob as a fucntion
+  
+  // all scala functions are instances of function x
+  
+  val doubler: Int => Int = (x: Int) => 2 * x
+  //or we can write directly as below
+  val bestdoubler = (x : Int) => 2 * x
+  
+  println(doubler(4),bestdoubler(5))
+  
+  // higher order functions are the one which take fucntions as arguments or return fucntions
+  
+  val aMappedList = List(1,2,3,4,5).map(x => x + 1)//HOF
+  val aFlatMappedList = List(1,2,3).flatMap(x => List(x,2 * x))
+  println(aFlatMappedList)
+  
+  //alternstive synatx
+  
+  val alternativeFlatMap = List(1,2,3).flatMap { x =>
+    List(x,2 * x)
+  }
+  println(alternativeFlatMap)
+  
+  val aFilter = List(1,2,3,4,5).filter(_ <= 3)
+  println(aFilter)
+  
+  // getting pair of 1,2,3 and a,b,c
+  
+  val pairs = List(1,2,3).flatMap(numbers => List("a","b","c").map(letters => s"$numbers-$letters"))
+  println(pairs)
+  
+  //alternative syntax
+  
+  val alternativePair = for {
+    number <- List(1,2,3)
+    letter <- List("a","b","c","d")
+  } yield  s"$number-$letter"
+  
+  println(alternativePair)
+  
+  
+  //Lists
+  
+  val aList = List(1,2,3,4,5)
+  println(aList.head,aList.tail)
+  val newList = 0 +: aList :+ 10
+  println(newList)
+  
+  
+  //sequences
+  
+  val aSeq =  Seq(1,2,3)//it is actually a trait
+  
+  //vector - fast seq implemenation
+  
+  val aVector = Vector(1,2,3,4,5)
+  
+  //sets
+  
+  val aSet = Set(1,2,3,4,2,2,3,2,3)
+  println(aSet)
+  
+  //ranges
+  
+  val aRange = 1 to 10
+  val multiplyBytwo = aRange.map(x => x * 2).toList
+  println(multiplyBytwo)
+  
+  //maps - tuples
+  
+  val aData = Map(
+    "pavan" -> 22,
+    "mohan" -> 23,
+    "venkat" -> 24,
+    )
+  
+  println(aData)
+  
+  
+  
+  
+  
+  
+  
+  def main (args:Array[String]):Unit = {
+    
+    
+  }
+}
